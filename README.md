@@ -1,15 +1,11 @@
-# Portfolio de Nihed Zaoui
-
-Structure :
-- `index.html` : le site
-- `api/chat.js` : fonction serveur du chatbot
-
-## Déploiement sur Vercel
-1. Crée un dépôt sur github.com et envoie-y tout le contenu de ce dossier (Add file > Upload files).
-2. Sur vercel.com : Add New > Project > choisis le dépôt.
-3. Avant de valider, dans Environment Variables, ajoute :
-   - Nom : ANTHROPIC_API_KEY
-   - Valeur : ta clé créée sur console.anthropic.com
-4. Clique sur Deploy.
-
-Optionnel : ANTHROPIC_MODEL pour changer de modèle (par défaut claude-haiku-5-5).
+Nihed Zaoui's portfolio (English version)
+`index.html`: the website
+`api/chat.js`: chatbot serverless function (Groq, free)
+Deploy on Vercel
+Create a repository on github.com and upload the content of this folder.
+On vercel.com: Add New > Project > pick the repository.
+Before deploying, under Environment Variables add:
+Name: GROQ_API_KEY
+Value: your key from console.groq.com/keys
+Click Deploy.
+Optional: GROQ_MODEL to change the model (default llama-3.3-70b-versatile).
