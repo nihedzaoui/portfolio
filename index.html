@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Nihed Zaoui | AI & Data Science</title>
+<meta name="description" content="Engineering student in Applied Mathematics and Master's student in Data Science at ENSIT. RAG, computer vision and machine learning, from raw data to deployed API.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500&family=Manrope:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#FFF2F6;--bg2:#FFE3EC;--ink:#2A1520;--muted:#7D5E6B;--acc:#E0608E;--acc-t:#B52F5E;--line:rgba(42,21,32,.14);--card:rgba(255,255,255,.7);--dot:rgba(224,96,142,.28);
+--serif:"Instrument Serif",Georgia,"Times New Roman",serif;--sans:"Manrope",system-ui,-apple-system,"Segoe UI",sans-serif;--mono:"JetBrains Mono",ui-monospace,Menlo,Consolas,monospace;
+color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#1A0F15;--bg2:#2A1722;--ink:#FDEFF4;--muted:#C9A7B4;--acc:#F28BB0;--acc-t:#F5A3C0;--line:rgba(253,239,244,.16);--card:rgba(255,255,255,.05);--dot:rgba(242,139,176,.2);color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#1A0F15;--bg2:#2A1722;--ink:#FDEFF4;--muted:#C9A7B4;--acc:#F28BB0;--acc-t:#F5A3C0;--line:rgba(253,239,244,.16);--card:rgba(255,255,255,.05);--dot:rgba(242,139,176,.2);color-scheme:dark}
+html{scroll-behavior:smooth;scroll-padding-top:env(safe-area-inset-top,0px)}
+*,*::before,*::after{box-sizing:inherit}
+body{margin:0;background:var(--bg) radial-gradient(var(--dot) 1px,transparent 1.5px) 0 0/28px 28px;color:var(--ink);font:400 16px/1.65 var(--sans);overflow-x:hidden}
+a{color:inherit}
+a:focus-visible,button:focus-visible,input:focus-visible{outline:2px solid var(--acc);outline-offset:3px}
+h1,h2,h3{font-family:var(--serif);font-weight:400;margin:0;letter-spacing:-.01em;line-height:1.02}
+h1 em,h2 em{color:var(--acc);font-style:italic}
+p{margin:0 0 12px}
+.wrap{max-width:1200px;margin:0 auto;padding:0 28px}
+.mono{font-family:var(--mono);font-size:.76rem;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.top{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:22px 0}
+.logo{font:italic 1.7rem var(--serif);text-decoration:none}
+.logo b{color:var(--acc);font-weight:400}
+.top nav{display:flex;gap:22px;flex-wrap:wrap}
+.top nav a{font:500 .88rem var(--sans);text-decoration:none;color:var(--muted)}
+.top nav a:hover{color:var(--ink)}
+.pill{font:500 .9rem var(--sans);text-decoration:none;border:1px solid var(--ink);border-radius:999px;padding:9px 20px;background:transparent;color:var(--ink);cursor:pointer;display:inline-block}
+.pill.fill{background:var(--acc);border-color:var(--acc);color:#2A1520}
+.pill:hover{transform:translateY(-1px)}
+.hero{display:grid;grid-template-columns:1.15fr .85fr;gap:40px;align-items:center;padding:56px 0 40px}
+.hero h1{font-size:clamp(3.6rem,9.5vw,8rem)}
+.hero .lines{margin:26px 0 30px;font-size:1.12rem;color:var(--muted);max-width:32em}
+.hero .lines b{color:var(--ink);font-weight:600}
+.btns{display:flex;flex-wrap:wrap;gap:12px}
+.net{width:100%;height:auto;max-height:420px}
+.net line{stroke:var(--acc);stroke-opacity:.28;stroke-width:1}
+.net circle{fill:var(--acc);transform-box:fill-box;transform-origin:center;animation:pulse 3.2s ease-in-out infinite}
+@keyframes pulse{0%,100%{opacity:.35;transform:scale(.8)}50%{opacity:1;transform:scale(1.15)}}
+.tagline{display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px;padding:10px 0 34px}
+.tagline b{font:italic 1.5rem var(--serif);color:var(--ink);text-transform:none;letter-spacing:0}
+.marq{border-block:1px solid var(--line);overflow:hidden;white-space:nowrap;padding:14px 0;background:var(--bg2)}
+.marq div{display:inline-block;animation:slide 38s linear infinite;font:500 .85rem var(--mono);letter-spacing:.12em;color:var(--acc-t)}
+@keyframes slide{to{transform:translateX(-50%)}}
+section.s{padding:96px 0 0}
+.eyebrow{font:500 .76rem var(--mono);letter-spacing:.1em;text-transform:uppercase;color:var(--acc-t);margin:0 0 14px}
+h2.big{font-size:clamp(2.4rem,6vw,4.6rem);max-width:12em}
+.hl{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:44px}
+.card{background:var(--card);backdrop-filter:blur(10px);border:1px solid var(--line);border-radius:26px;padding:28px;transition:transform .25s,border-color .25s}
+.card:hover{transform:translateY(-4px);border-color:var(--acc)}
+.card .n{font:italic 3.2rem var(--serif);color:var(--acc);line-height:1}
+.card h3{font-size:1.7rem;margin:12px 0 10px}
+.card p{color:var(--muted);font-size:.95rem}
+.idx{margin-top:40px;border-top:1px solid var(--line)}
+.idx a{display:grid;grid-template-columns:60px 1.2fr 1.4fr 30px;align-items:center;gap:12px;padding:20px 4px;border-bottom:1px solid var(--line);text-decoration:none;transition:padding .25s,background .25s}
+.idx a:hover{background:var(--bg2);padding-left:18px}
+.idx span{font:500 .8rem var(--mono);color:var(--acc-t)}
+.idx b{font:400 1.7rem var(--serif)}
+.idx em{font-style:normal;color:var(--muted);font-size:.92rem}
+.idx i{font-style:normal;font-size:1.3rem;color:var(--acc)}
+.focus{display:grid;grid-template-columns:.9fr 1.1fr;gap:48px;padding:72px 0;border-top:1px solid var(--line)}
+.focus .num{font:italic 5rem var(--serif);color:var(--acc);line-height:.9;display:block;margin-bottom:10px}
+.focus h2{font-size:clamp(2.2rem,4.4vw,3.6rem)}
+.focus .lead{font-size:1.1rem;color:var(--muted);max-width:34em}
+.cols{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:26px;font-size:.92rem}
+.cols h4{font:500 .72rem var(--mono);letter-spacing:.1em;text-transform:uppercase;color:var(--acc-t);margin:0 0 8px}
+.xp{display:grid;grid-template-columns:150px 1fr;gap:28px;padding:30px 0;border-top:1px solid var(--line)}
+.xp h3{font-size:2rem}
+.xp h3 span{color:var(--acc)}
+.xp ul{margin:10px 0 0;padding-left:18px;color:var(--muted)}
+.xp li{margin-bottom:6px}
+.tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:14px}
+.tag{font:500 .72rem var(--mono);border:1px solid var(--line);border-radius:999px;padding:3px 12px;color:var(--acc-t)}
+.pj{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:44px}
+.pj .card{display:flex;flex-direction:column;min-height:320px}
+.pj .card ul{padding-left:18px;margin:6px 0 0;color:var(--muted);font-size:.93rem}
+.pj .tags{margin-top:auto;padding-top:16px}
+.stk{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-top:44px}
+.stk h3{font-size:1.6rem;margin:6px 0 14px}
+.stk b{display:block;font:600 .8rem var(--sans);margin-top:12px}
+.stk p{color:var(--muted);font-size:.9rem;margin:0}
+.edu{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:44px}
+.edu .card{padding:24px}
+.edu h3{font-size:1.5rem}
+.edu small{color:var(--muted)}
+.cta{padding:110px 0 70px;text-align:left}
+.cta h2{font-size:clamp(3rem,8vw,6.4rem);max-width:10em}
+.cta .links{display:flex;flex-wrap:wrap;gap:12px;margin:30px 0 20px}
+footer{border-top:1px solid var(--line);padding:22px 0 90px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px}
+.rv{opacity:0;transform:translateY(24px);transition:opacity .7s,transform .7s}
+.rv.in{opacity:1;transform:none}
+.fab{position:fixed;right:20px;bottom:calc(20px + env(safe-area-inset-bottom,0px));z-index:20;font:600 .92rem var(--sans);background:var(--acc);color:#2A1520;border:0;border-radius:999px;padding:14px 22px;cursor:pointer;box-shadow:0 12px 30px -10px var(--acc)}
+.panel{position:fixed;right:20px;bottom:calc(84px + env(safe-area-inset-bottom,0px));z-index:21;width:min(400px,calc(100vw - 40px));max-height:min(560px,calc(100% - 120px));display:none;flex-direction:column;background:var(--bg);border:1px solid var(--line);border-radius:26px;box-shadow:0 30px 70px -20px rgba(120,30,70,.45);overflow:hidden}
+.panel.open{display:flex}
+.p-head{display:flex;justify-content:space-between;align-items:center;padding:16px 20px;border-bottom:1px solid var(--line);font:italic 1.35rem var(--serif)}
+.p-head button{background:none;border:0;color:var(--muted);font-size:1.4rem;cursor:pointer;line-height:1}
+.log{flex:1;overflow-y:auto;padding:16px;display:flex;flex-direction:column;gap:10px;min-height:160px}
+.msg{padding:10px 15px;border-radius:18px;max-width:88%;white-space:pre-wrap;overflow-wrap:anywhere;font-size:.93rem;line-height:1.5}
+.bot{background:var(--bg2);align-self:flex-start;border-bottom-left-radius:6px}
+.me{background:var(--acc);color:#2A1520;align-self:flex-end;border-bottom-right-radius:6px}
+.chips{display:flex;flex-wrap:wrap;gap:6px;padding:0 16px 10px}
+.chip{font:inherit;font-size:.8rem;background:transparent;color:var(--ink);border:1px solid var(--line);border-radius:999px;padding:5px 12px;cursor:pointer}
+.chip:hover{border-color:var(--acc)}
+.row{display:flex;gap:8px;padding:12px 16px;border-top:1px solid var(--line)}
+.row input{flex:1;min-width:0;font:inherit;color:var(--ink);background:var(--card);border:1px solid var(--line);border-radius:999px;padding:10px 16px}
+.row button{font:600 .92rem var(--sans);background:var(--acc);color:#2A1520;border:0;border-radius:999px;padding:0 18px;cursor:pointer}
+.row button:disabled,.row input:disabled{opacity:.5;cursor:not-allowed}
+@media (max-width:900px){
+.hero,.focus,.xp,.edu{grid-template-columns:1fr}
+.hl,.pj,.stk{grid-template-columns:1fr 1fr}
+.cols{grid-template-columns:1fr}
+.idx a{grid-template-columns:40px 1fr 24px}.idx em{display:none}
+.top nav{display:none}.net{max-height:260px}}
+@media (max-width:560px){.hl,.pj,.stk{grid-template-columns:1fr}.wrap{padding:0 20px}}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.net circle,.marq div{animation:none}.rv{opacity:1;transform:none;transition:none}.card,.pill,.idx a{transition:none}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="top">
+    <a class="logo" href="#top">Nihed<b>.</b>Z</a>
+    <nav aria-label="Sections"><a href="#highlights">Highlights</a><a href="#focus">Focus</a><a href="#experience">Experience</a><a href="#projects">Projects</a><a href="#stack">Stack</a><a href="#contact">Connect</a></nav>
+    <button class="pill" id="open0">Ask my AI</button>
+  </header>
+
+  <section class="hero" id="top">
+    <div>
+      <p class="eyebrow">/ 001 · AI & Data Science</p>
+      <h1>Nihed <em>Zaoui</em>.</h1>
+      <p class="lines">Engineering student in <b>Applied Mathematics</b> and Master's student in <b>Data Science</b> at ENSIT, Tunis.<br>Four internships across <b>RAG</b>, <b>computer vision</b> and <b>machine learning</b>, and a taste for taking models all the way to a deployed API.</p>
+      <div class="btns">
+        <button class="pill fill" id="open1">Chat with my assistant</button>
+        <a class="pill" href="https://github.com/nihedzaoui" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
+        <a class="pill" href="https://www.linkedin.com/in/nihed-zaoui-466447337/" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a>
+      </div>
+    </div>
+    <svg class="net" id="net" viewBox="0 0 400 360" role="img" aria-label="Decorative neural network"></svg>
+  </section>
+  <div class="tagline mono"><span>Bref.</span><b>Learn ⁘ Build ⁘ Deploy</b><span>Scroll for more ↓</span></div>
+</div>
+<div class="marq" aria-hidden="true"><div id="marq"></div></div>
+
+<div class="wrap">
+  <section class="s" id="highlights">
+    <p class="eyebrow">02 · Recent highlights</p>
+    <h2 class="big">Recent work, <em>in short.</em></h2>
+    <div class="hl" id="hl"></div>
+  </section>
+
+  <section class="s" id="focus">
+    <p class="eyebrow">03 · Specializations</p>
+    <h2 class="big">Different angles. <em>One data mindset.</em></h2>
+    <nav class="idx" id="idx" aria-label="Focus areas"></nav>
+    <div id="detail"></div>
+  </section>
+
+  <section class="s" id="experience">
+    <p class="eyebrow">04 · Experience</p>
+    <h2 class="big">Built in real <em>operating contexts.</em></h2>
+    <div style="margin-top:44px" id="xp"></div>
+  </section>
+
+  <section class="s" id="projects">
+    <p class="eyebrow">05 · Selected projects</p>
+    <h2 class="big">Projects with <em>a point of view.</em></h2>
+    <div class="pj" id="pj"></div>
+  </section>
+
+  <section class="s" id="stack">
+    <p class="eyebrow">06 · Tool stack</p>
+    <h2 class="big">The tools behind <em>the thinking.</em></h2>
+    <div class="stk" id="stk"></div>
+  </section>
+
+  <section class="s" id="education">
+    <p class="eyebrow">07 · Education & community</p>
+    <h2 class="big">Proof of <em>the foundations.</em></h2>
+    <div class="edu">
+      <div class="card"><p class="mono">2024 – present</p><h3>ENSIT, Tunis</h3><p>Engineering Degree in Applied Mathematics and Modeling · Master's Degree in Data Science (M2).<br><small>ML, AI, statistics, optimization, numerical methods, probability.</small></p></div>
+      <div class="card"><p class="mono">2022 – 2024</p><h3>Preparatory cycle</h3><p>IPEIM Monastir (2023–2024) and ESSTHS Hammam Sousse (2022–2023).<br><small>Mathematics, physics, object-oriented programming.</small></p></div>
+      <div class="card" style="grid-column:1/-1"><p class="mono">Community</p><h3>Clubs & challenges</h3><p>Nerdata ENSIT · Geekshack ENSIT · Data Fest · Data Leaders · IEEE ENSIT Student Branch</p></div>
+    </div>
+  </section>
+
+  <section class="cta" id="contact">
+    <p class="eyebrow">Let's connect</p>
+    <h2>Build something <em>that learns.</em></h2>
+    <p style="color:var(--muted);max-width:32em;margin-top:18px">Open to a job or end-of-studies internship in applied AI, GenAI or data science.</p>
+    <div class="links">
+      <a class="pill fill" href="mailto:nihedzaoui55@gmail.com">nihedzaoui55@gmail.com ↗</a>
+      <a class="pill" href="https://github.com/nihedzaoui" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
+      <a class="pill" href="https://www.linkedin.com/in/nihed-zaoui-466447337/" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a>
+      <button class="pill" id="open2">Ask my AI</button>
+    </div>
+    <p class="mono">+216 26 126 678 · Monastir, Tunisia</p>
+  </section>
+  <footer class="mono"><span>Nihed Zaoui · ENSIT / Tunisia</span><span>© 2026</span></footer>
+</div>
+
+<button class="fab" id="fab" aria-expanded="false" aria-controls="panel">Ask AI</button>
+<div class="panel" id="panel" role="dialog" aria-label="Portfolio assistant">
+  <div class="p-head"><span>Nihed's assistant</span><button id="close" aria-label="Close">×</button></div>
+  <div class="log" id="log" aria-live="polite"><div class="msg bot">Hello! I can answer questions about Nihed's background, internships, projects and skills.</div></div>
+  <div class="chips" id="chips"><button class="chip">What internships has she done?</button><button class="chip">What is her most technical project?</button><button class="chip">Which cloud tools does she use?</button></div>
+  <form class="row" id="form" onsubmit="return false"><input id="q" type="text" placeholder="Your question…" autocomplete="off" aria-label="Your question"><button id="send" type="submit">Send</button></form>
+</div>
+
+<script>
+const $=id=>document.getElementById(id);
+const H=[
+["01","Document intelligence at ItGate","RAG with Groq OCR and LLMs to extract, classify and retrieve information from heterogeneous documents, served through FastAPI.","#experience"],
+["02","Enterprise RAG at Smartovate","Retrieval on Amazon Bedrock and OpenSearch Serverless: ingestion, embeddings, semantic search and generated answers.","#experience"],
+["03","Football analytics with vision","YOLO and OpenCV to track players and the ball, then estimate speed, distance and possession.","#projects"]];
+const F=[
+{id:"genai",t:"Generative AI & RAG",s:"Retrieval · LLMs · agents",h:"Make documents <em>answer back.</em>",p:"Pipelines that ingest messy documents, index them as vectors and answer questions with grounded, contextual responses.",c:["RAG pipelines","Embeddings & semantic search","OCR information extraction","Agentic AI pipelines"],k:["Groq OCR · LLMs","Amazon Bedrock","OpenSearch Serverless","FastAPI"],f:"ItGate: ingestion to chatbot in one Python pipeline. Smartovate: enterprise knowledge retrieval on AWS."},
+{id:"ml",t:"Machine learning",s:"Features · models · evaluation",h:"Turn features <em>into signal.</em>",p:"Careful feature work, honest evaluation and models that cope with imbalance, from recommenders to risk prediction.",c:["Feature engineering","Imbalanced classification (SMOTE)","Hyperparameter optimization","Recommender systems"],k:["Scikit-learn · XGBoost","TensorFlow · Keras","PyTorch · Lightning"],f:"Mediwave: hybrid recommender with an F1-score of 0.80. Bankruptcy prediction with XGBoost."},
+{id:"cv",t:"Computer vision",s:"Detection · tracking · geometry",h:"Teach machines <em>to watch the game.</em>",p:"Turn video into measurements: who is where, how fast, and who holds the ball.",c:["Detection & tracking","Team classification","Camera-motion compensation","Perspective transformation"],k:["Ultralytics YOLO","OpenCV","PyTorch"],f:"Football analyzer estimating player speed, distance covered and ball possession."},
+{id:"data",t:"Data science",s:"Exploration · validation · statistics",h:"Find the pattern <em>before the model.</em>",p:"Solid data foundations: exploration, validation and clear data contracts before any modeling begins.",c:["Exploration & validation","Statistics & optimization","Sensor-signal classification","Dashboards"],k:["NumPy · Pandas · SciPy","Matplotlib · Seaborn","Plotly · Power BI"],f:"FlyRank: dataset validation and data contracts on large-scale datasets. Fall detection from accelerometer and gyroscope data."},
+{id:"deploy",t:"Deployment & cloud",s:"APIs · containers · AWS",h:"Ship models <em>that stay up.</em>",p:"Wrap models in APIs and containers so they can leave the notebook and run for real users.",c:["REST APIs","Containers","CI/CD","Cloud services"],k:["FastAPI · Flask · Streamlit","Docker · GitHub Actions","AWS · Bedrock · Azure"],f:"ItGate pipeline exposed through a FastAPI REST API. Smartovate system built on AWS services."}];
+const E=[
+["AI Engineer","ItGate Tunisia","Sousse · Hybrid",["Designed a document automation system combining Groq OCR, LLMs and RAG to extract, classify and retrieve information from heterogeneous documents.","Built an end-to-end Python pipeline: ingestion, OCR extraction, vector indexing, semantic search and contextual chatbot, exposed through a FastAPI REST API."],["RAG","OCR","LLM","FastAPI"]],
+["ML Engineer","FlyRank AI","Monastir · Remote",["Developed ML workflows for search intelligence: data exploration, dataset validation, feature engineering and pipeline design.","Processed large-scale datasets and documented data contracts and AI system architectures."],["Feature engineering","ML pipelines","Python"]],
+["AI Engineer","Smartovate","Monastir · Remote",["Designed a RAG system on Amazon Bedrock and Amazon OpenSearch Serverless for enterprise knowledge retrieval.","Implemented ingestion, vector embeddings, semantic search and AI-powered response generation with Python and AWS."],["AWS","Bedrock","OpenSearch","RAG"]],
+["AI Engineer","Mediwave Tunisia","Sousse · Hybrid",["Developed a hybrid recommendation system (machine learning and business rules) for paramedical products.","Implemented content-based filtering with TF-IDF and cosine similarity, reaching an F1-score of 0.80."],["TF-IDF","Recommendation","Scikit-learn"]]];
+const P=[
+["01 / Computer vision","AI-Powered Football Match Analyzer",["Player and ball detection and tracking, team classification.","Camera-motion compensation and perspective transformation to estimate speed, distance and possession."],["Python","YOLO","OpenCV"]],
+["02 / Predictive modeling","Financial Distress Prediction",["Classification models predicting company bankruptcy from financial indicators.","Feature engineering, SMOTE, feature selection and hyperparameter optimization."],["XGBoost","Scikit-learn","Power BI"]],
+["03 / Sensor data","Fall Detection System",["Fall classification from accelerometer and gyroscope data.","Pipeline separating normal activities from dangerous falls."],["Python","ML","Sensors"]]];
+const S=[
+["01 / GENAI","Generative AI",[["Concepts","LLMs · RAG · Embeddings"],["Practice","Semantic search · Agentic pipelines"]]],
+["02 / ML","Machine learning",[["Classic","Scikit-learn · XGBoost"],["Deep learning","TensorFlow · Keras · PyTorch · Lightning"],["Vision","OpenCV · Ultralytics YOLO"]]],
+["03 / DATA","Data science",[["Python stack","NumPy · Pandas · SciPy"],["Visualization","Matplotlib · Seaborn · Plotly"],["Languages","Python · C · C++ · Java · SQL · R · MATLAB"]]],
+["04 / DEPLOY","Delivery",[["Serving","FastAPI · Flask · Streamlit"],["Tooling","Docker · Git · GitHub Actions"],["Cloud","AWS · Amazon Bedrock · Azure"]]]];
+
+$("marq").innerHTML=Array(2).fill(["RAG","COMPUTER VISION","MACHINE LEARNING","LLMS","SEMANTIC SEARCH","FEATURE ENGINEERING","FASTAPI","AWS BEDROCK","YOLO","MLOPS"].join(" &nbsp;•&nbsp; ")+" &nbsp;•&nbsp; ").join("");
+$("hl").innerHTML=H.map(h=>`<a class="card rv" href="${h[3]}" style="text-decoration:none"><div class="n">${h[0]}</div><h3>${h[1]}</h3><p>${h[2]}</p><p class="mono" style="margin:0;color:var(--acc-t)">Trace it ↗</p></a>`).join("");
+$("idx").innerHTML=F.map((f,i)=>`<a href="#${f.id}"><span>0${i+1}</span><b>${f.t}</b><em>${f.s}</em><i>↘</i></a>`).join("");
+$("detail").innerHTML=F.map((f,i)=>`<article class="focus rv" id="${f.id}"><div><span class="num">0${i+1}</span><p class="eyebrow">${f.t}</p><h2>${f.h}</h2></div><div><p class="lead">${f.p}</p><div class="cols"><div><h4>Coverage</h4>${f.c.join("<br>")}</div><div><h4>Tooling</h4>${f.k.join("<br>")}</div><div><h4>Field proof</h4>${f.f}</div></div></div></article>`).join("");
+$("xp").innerHTML=E.map(e=>`<article class="xp rv"><div class="mono">${e[2]}<br>Internship</div><div><h3>${e[0]} <span>${e[1]}</span></h3><ul>${e[3].map(x=>`<li>${x}</li>`).join("")}</ul><div class="tags">${e[4].map(t=>`<span class="tag">${t}</span>`).join("")}</div></div></article>`).join("");
+$("pj").innerHTML=P.map(p=>`<article class="card rv"><p class="mono">${p[0]}</p><h3>${p[1]}</h3><ul>${p[2].map(x=>`<li>${x}</li>`).join("")}</ul><div class="tags">${p[3].map(t=>`<span class="tag">${t}</span>`).join("")}</div></article>`).join("");
+$("stk").innerHTML=S.map(s=>`<article class="card rv"><p class="mono">${s[0]}</p><h3>${s[1]}</h3>${s[2].map(r=>`<b>${r[0]}</b><p>${r[1]}</p>`).join("")}</article>`).join("");
+
+(function(){const L=[3,5,4,2],svg=$("net"),pts=[];let h="";
+L.forEach((n,i)=>{for(let j=0;j<n;j++)pts.push([i,50+i*100,(360/(n+1))*(j+1)])});
+pts.forEach(a=>pts.forEach(b=>{if(b[0]===a[0]+1)h+=`<line x1="${a[1]}" y1="${a[2]}" x2="${b[1]}" y2="${b[2]}"/>`}));
+pts.forEach((p,k)=>{h+=`<circle cx="${p[1]}" cy="${p[2]}" r="8" style="animation-delay:${(k*.27).toFixed(2)}s"/>`});
+svg.innerHTML=h})();
+
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add("in");io.unobserve(e.target)}}),{threshold:.12});
+document.querySelectorAll(".rv").forEach(el=>io.observe(el));
+
+const log=$("log"),input=$("q"),send=$("send"),panel=$("panel"),fab=$("fab"),history=[];let busy=false;
+function toggle(o){panel.classList.toggle("open",o);fab.setAttribute("aria-expanded",o);fab.textContent=o?"Close":"Ask AI";if(o)input.focus()}
+fab.onclick=()=>toggle(!panel.classList.contains("open"));
+$("close").onclick=()=>toggle(false);
+["open0","open1","open2"].forEach(i=>$(i).onclick=()=>toggle(true));
+function add(c,t){const d=document.createElement("div");d.className="msg "+c;d.textContent=t;log.appendChild(d);log.scrollTop=log.scrollHeight;return d}
+async function ask(q){
+  if(busy||!q.trim())return;
+  busy=true;send.disabled=true;$("chips").style.display="none";add("me",q);input.value="";
+  const out=add("bot","…");
+  try{
+    const res=await fetch("/api/chat",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({messages:[...history,{role:"user",content:q}]})});
+    const data=await res.json();
+    if(res.status===429)throw new Error("rate");
+    if(!res.ok)throw new Error(data.error||"error");
+    out.textContent=data.text;
+    history.push({role:"user",content:q},{role:"assistant",content:data.text});
+  }catch(e){
+    out.textContent=e.message==="rate"?"Too many questions in a row. Please try again in a moment.":"I couldn't answer right now. You can write to nihedzaoui55@gmail.com.";
+  }
+  busy=false;send.disabled=false;log.scrollTop=log.scrollHeight;
+}
+$("form").addEventListener("submit",()=>ask(input.value));
+document.querySelectorAll(".chip").forEach(c=>c.addEventListener("click",()=>ask(c.textContent)));
+</script>
+</body>
+</html>
