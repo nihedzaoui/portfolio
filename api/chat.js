@@ -1,4 +1,4 @@
-// Vercel serverless function: calls the Groq API (free) without exposing the key.
+// Vercel serverless function: calls the Groq API without exposing the key.
 // The key is read from the GROQ_API_KEY environment variable (never in the code).
 const PROFILE = `Nihed Zaoui, engineering student, Monastir (Tunisia). Email: nihedzaoui55@gmail.com, phone: +216 26 126 678. LinkedIn: https://www.linkedin.com/in/nihed-zaoui-466447337/ GitHub: https://github.com/nihedzaoui. Looking for a job or end-of-studies internship in applied AI, GenAI or data science.
 EDUCATION: Engineering Degree in Applied Mathematics and Modeling + Master's Degree in Data Science (M2) at ENSIT Tunis (2024-present; ML, AI, statistics, optimization, numerical methods, probability, mathematical modeling). Preparatory engineering studies at IPEIM Monastir (2023-2024). ESSTHS Hammam Sousse (2022-2023; math, physics, OOP).
