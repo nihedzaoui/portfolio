@@ -19,6 +19,8 @@ function limited(ip) {
   return recent.length > 15;
 }
 
+const MODEL = process.env.GROQ_MODEL || "openai/gpt-oss-20b";
+
 module.exports = async (req, res) => {
   if (req.method !== "POST") return res.status(405).json({ error: "Method not allowed" });
   const ip = (req.headers["x-forwarded-for"] || "").split(",")[0].trim() || "unknown";
@@ -42,9 +44,10 @@ module.exports = async (req, res) => {
         authorization: "Bearer " + process.env.GROQ_API_KEY
       },
       body: JSON.stringify({
-        model: process.env.GROQ_MODEL || "llama-3.3-70b-versatile",
-        max_tokens: 400,
+        model: MODEL,
+        max_tokens: 1500,
         temperature: 0.4,
+        ...(MODEL.startsWith("openai/gpt-oss") ? { reasoning_effort: "low" } : {}),
         messages: [{ role: "system", content: SYSTEM }, ...messages]
       })
     });
