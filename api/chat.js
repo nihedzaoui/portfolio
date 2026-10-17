@@ -50,7 +50,10 @@ module.exports = async (req, res) => {
     });
     const data = await r.json();
     if (r.status === 429) return res.status(429).json({ error: "Too many requests" });
-    if (!r.ok) return res.status(502).json({ error: "Upstream error" });
+    if (!r.ok) {
+      console.error("Groq error", r.status, JSON.stringify(data));
+      return res.status(502).json({ error: "Upstream error", status: r.status, detail: data && data.error && data.error.message });
+    }
     const text = (data.choices && data.choices[0] && data.choices[0].message && data.choices[0].message.content || "").trim();
     return res.status(200).json({ text: text || "I have no answer right now." });
   } catch (e) {
