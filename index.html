@@ -283,13 +283,13 @@ async function ask(q){
     });
     const data = await res.json();
     if (res.status === 429) throw new Error("rate");
-    if (!res.ok) throw new Error(data.error || "error");
+    if (!res.ok) throw new Error((data.error || "error") + " | status: " + (data.status || res.status) + " | " + (data.detail || ""));
     out.textContent = data.text;
     history.push({ role: "user", content: q }, { role: "assistant", content: data.text });
   } catch (e) {
     out.textContent = e.message === "rate"
       ? "Too many questions in a row. Please try again in a moment."
-      : "I couldn't answer right now. You can write to nihedzaoui55@gmail.com.";
+      : "DEBUG: " + e.message;
   }
   busy = false; send.disabled = false; log.scrollTop = log.scrollHeight;
 }
